@@ -1,0 +1,11 @@
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\bin\Debug\Telecomando.exe.config
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\bin\Debug\Telecomando.exe
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\bin\Debug\Telecomando.pdb
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\obj\Debug\Telecomando.csproj.AssemblyReference.cache
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\obj\Debug\Telecomando.csproj.SuggestedBindingRedirects.cache
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\obj\Debug\Telecomando.Form1.resources
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\obj\Debug\Telecomando.Properties.Resources.resources
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\obj\Debug\Telecomando.csproj.GenerateResource.cache
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\obj\Debug\Telecomando.csproj.CoreCompileInputs.cache
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\obj\Debug\Telecomando.exe
+C:\Users\colombi.19314\Desktop\Telecomando\Telecomando\obj\Debug\Telecomando.pdb
