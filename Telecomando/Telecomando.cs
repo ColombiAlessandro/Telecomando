@@ -14,11 +14,11 @@ namespace Telecomando
         private int volume;
         private int canale;
         private bool onOff;
-        public Telecomando(string produttoreImp,string modelloImp, string modalitaFunzImp)
+        public Telecomando(string produttoreImp, string modelloImp, string modalitaFunzImp)
         {
             produttore = produttoreImp;
             modello = modelloImp;
-            modalitaFunz=modalitaFunzImp;
+            modalitaFunz = modalitaFunzImp;
             volume = 0;
         }
         public Telecomando(string produttoreImp, string modelloImp, string modalitaFunzImp, int volumeImp, int canaleImp, bool statoImp)
@@ -34,6 +34,11 @@ namespace Telecomando
         {
 
         }
+        public void SetVolume(int ilvolume)
+        {
+            volume = ilvolume;
+        }
+
         public void AbbassaVolume()
         {
             volume--;

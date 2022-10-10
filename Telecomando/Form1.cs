@@ -34,83 +34,122 @@ namespace Telecomando
         {
             telecomando.Accendi();
             aggiornaStato();
+            aggiornaCanale();
+            aggiornaVolume();
         }
 
         private void off_Click(object sender, EventArgs e)
         {
             telecomando.Spegni();
             aggiornaStato();
+            telecomando.SetCanale(1);
+            telecomando.SetVolume(0);
+            volumeBox.Text = string.Empty;
+            canaleBox.Text = string.Empty;
         }
 
         private void canale1_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(1);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(1);
+                aggiornaCanale();
+            }
         }
 
         private void canale2_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(2);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(2);
+                aggiornaCanale();
+            }
         }
 
         private void canale3_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(3);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(3);
+                aggiornaCanale();
+            }
         }
 
         private void canale4_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(4);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(4);
+                aggiornaCanale();
+            }
         }
 
         private void canale5_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(5);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(5);
+                aggiornaCanale();
+            }
         }
 
         private void canale6_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(6);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(6);
+                aggiornaCanale();
+            }
         }
 
         private void canale7_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(7);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(7);
+                aggiornaCanale();
+            }
         }
 
         private void canale8_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(8);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(8);
+                aggiornaCanale();
+            }
         }
 
         private void canale9_Click(object sender, EventArgs e)
         {
-            telecomando.SetCanale(9);
-            aggiornaCanale();
+            if (telecomando.GetStato())
+            {
+                telecomando.SetCanale(9);
+                aggiornaCanale();
+            }
         }
 
         private void alzaVolume_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetVolume() < 99)
+            if (telecomando.GetStato())
             {
-                telecomando.AlzaVolume();
-                aggiornaVolume();
+                if (telecomando.GetVolume() < 99)
+                {
+                    telecomando.AlzaVolume();
+                    aggiornaVolume();
+                }
             }
         }
 
         private void abbassaVolume_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetVolume() != 0)
+            if (telecomando.GetStato())
             {
-                telecomando.AbbassaVolume();
-                aggiornaVolume();
+                if (telecomando.GetVolume() != 0)
+                {
+                    telecomando.AbbassaVolume();
+                    aggiornaVolume();
+                }
             }
         }
         private void aggiornaCanale()
