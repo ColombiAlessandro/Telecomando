@@ -17,9 +17,12 @@ namespace Telecomando
             InitializeComponent();
         }
         Telecomando telecomando;
+        TV televisore;
         private void Form1_Load(object sender, EventArgs e)
         {
-            telecomando = new Telecomando("Samsung", "IC500", "Infrarossi",0,1,true);
+            string[] iconnettori = { "HDMI", "VGA", "SATA" };
+            televisore = new TV("Samsung", "CP300", iconnettori);
+            telecomando = new Telecomando("Samsung", "IC500", "Infrarossi", televisore);
             aggiornaCanale();
             aggiornaStato();
             aggiornaVolume();
@@ -50,7 +53,7 @@ namespace Telecomando
 
         private void canale1_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(1);
                 aggiornaCanale();
@@ -59,7 +62,7 @@ namespace Telecomando
 
         private void canale2_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(2);
                 aggiornaCanale();
@@ -68,7 +71,7 @@ namespace Telecomando
 
         private void canale3_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(3);
                 aggiornaCanale();
@@ -77,7 +80,7 @@ namespace Telecomando
 
         private void canale4_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(4);
                 aggiornaCanale();
@@ -86,7 +89,7 @@ namespace Telecomando
 
         private void canale5_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(5);
                 aggiornaCanale();
@@ -95,7 +98,7 @@ namespace Telecomando
 
         private void canale6_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(6);
                 aggiornaCanale();
@@ -104,7 +107,7 @@ namespace Telecomando
 
         private void canale7_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(7);
                 aggiornaCanale();
@@ -113,7 +116,7 @@ namespace Telecomando
 
         private void canale8_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(8);
                 aggiornaCanale();
@@ -122,7 +125,7 @@ namespace Telecomando
 
         private void canale9_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
                 telecomando.SetCanale(9);
                 aggiornaCanale();
@@ -131,9 +134,9 @@ namespace Telecomando
 
         private void alzaVolume_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
-                if (telecomando.GetVolume() < 99)
+                if (televisore.GetVolume() < 99)
                 {
                     telecomando.AlzaVolume();
                     aggiornaVolume();
@@ -143,9 +146,9 @@ namespace Telecomando
 
         private void abbassaVolume_Click(object sender, EventArgs e)
         {
-            if (telecomando.GetStato())
+            if (televisore.GetStato())
             {
-                if (telecomando.GetVolume() != 0)
+                if (televisore.GetVolume() != 0)
                 {
                     telecomando.AbbassaVolume();
                     aggiornaVolume();
@@ -154,15 +157,15 @@ namespace Telecomando
         }
         private void aggiornaCanale()
         {
-            canaleBox.Text = telecomando.GetCanale().ToString();
+            canaleBox.Text = televisore.GetCanale().ToString();
         }
         private void aggiornaVolume()
         {
-            volumeBox.Text = telecomando.GetVolume().ToString();
+            volumeBox.Text = televisore.GetVolume().ToString();
         }
         private void aggiornaStato()
         {
-            statoBox.Text = telecomando.GetStato().ToString();
+            statoBox.Text = televisore.GetStato().ToString();
         }
     }
 }

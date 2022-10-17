@@ -11,65 +11,61 @@ namespace Telecomando
         private string produttore;
         private string modello;
         private string modalitaFunz;
-        private int volume;
-        private int canale;
-        private bool onOff;
+        private TV televisore;
         public Telecomando(string produttoreImp, string modelloImp, string modalitaFunzImp)
         {
             produttore = produttoreImp;
             modello = modelloImp;
             modalitaFunz = modalitaFunzImp;
-            volume = 0;
+            
         }
-        public Telecomando(string produttoreImp, string modelloImp, string modalitaFunzImp, int volumeImp, int canaleImp, bool statoImp)
+        public Telecomando(string produttoreImp, string modelloImp, string modalitaFunzImp, TV iltelevisore)
         {
             produttore = produttoreImp;
             modello = modelloImp;
             modalitaFunz = modalitaFunzImp;
-            volume = volumeImp;
-            canale = canaleImp;
-            onOff = statoImp;
+            SetTV(iltelevisore);
         }
+
         public Telecomando()
         {
 
         }
+        public void SetTV(TV iltelevisore)
+        {
+            televisore= iltelevisore;
+        }
         public void SetVolume(int ilvolume)
         {
-            volume = ilvolume;
+            if (televisore != null)
+                televisore.SetVolume(ilvolume);
         }
 
         public void AbbassaVolume()
         {
-            volume--;
+            if (televisore != null) 
+                televisore.SetVolume(televisore.GetVolume() - 1);
         }
         public void AlzaVolume()
         {
-            volume++;
+            if (televisore != null)
+                televisore.SetVolume(televisore.GetVolume() + 1);
         }
         public void SetCanale(int nuovoCanale)
         {
-            canale = nuovoCanale;
+            if (televisore != null)
+                televisore.SetCanale(nuovoCanale);
         } 
         public void Accendi()
         {
-            onOff = true;
+            if (televisore != null)
+                televisore.SetStato(true);
         }
         public void Spegni()
         {
-            onOff = false;
+            if (televisore != null)
+                televisore.SetStato(false);
         }
-        public int GetCanale()
-        {
-            return canale;
-        }
-        public int GetVolume()
-        {
-            return volume;
-        }
-        public bool GetStato()
-        {
-            return onOff;
-        }
+       
     }
 }
